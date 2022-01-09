@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="84px"
+   height="32px"
+   viewBox="0 0 84 32"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="black-mountain.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.595238"
+     inkscape:cx="40.451796"
+     inkscape:cy="27.669187"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <path
+     d="M0 32L32.8515 7.06494L39.5049 12.4675L55.3069 0L84 27.4286L76.3069 23.4805L76.3069 27.4286L55.3069 7.06494L59.6733 16.2078L51.9802 12.4675L62.5842 23.4805L51.9802 21.1948L51.9802 29.9221L32.8515 12.4675L35.9703 23.4805L29.7327 21.1948L0 32Z"
+     id="New-shape"
+     fill="#FFFFFF"
+     fill-rule="evenodd"
+     stroke="none"
+     style="fill:#000000;fill-opacity:1" />
+</svg>
