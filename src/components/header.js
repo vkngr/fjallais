@@ -3,27 +3,10 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+  <header className="bg-stone-200 mb-4">
+    <div className="max-w-screen-lg p-6">
+      <h1>
+        <Link to="/" className="text-stone-700">
           {siteTitle}
         </Link>
       </h1>
