@@ -360,7 +360,7 @@ const IndexPage = () => {
             className="max-h-[600px]"
           />
           <div className="absolute h-full w-full z-10 top-0 bg-gradient-to-b from-white to-transparent"></div>
-          <div className="absolute z-20 bottom-0 left-0 ml-6 mb-6">
+          <div className="absolute z-20 bottom-12 md:bottom-0 ml-6 mb-6">
             <ul className="flex flex-row gap-6">
               <li>
                 <StaticImage
@@ -385,7 +385,7 @@ const IndexPage = () => {
               <span className="text-white">Iceland</span>
             </div>
           </div>
-          <div className="absolute z-20 bottom-0 right-0 mr-6 mb-6">
+          <div className="absolute z-20 bottom-0 ml-6 md:ml-0 md:mr-6 md:right-0 mb-6">
             <ul className="flex flex-row gap-6">
               <li>
                 <span className="text-white font-2xl">Terms & Conditions</span>
