@@ -5,6 +5,7 @@ import Seo from "../components/seo"
 import Header from "../components/header"
 
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const IndexPage = () => {
   return (
@@ -22,36 +23,40 @@ const IndexPage = () => {
 
             {/* Hero Navigation */}
             <ul className="mt-12 flex flex-col md:flex-row gap-6">
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-sky-700"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                <span className="text-lg">Experiences</span>
-              </li>
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-sky-700"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                <span className="text-lg">Check out our blog</span>
-              </li>
+              <a href="#experiences">
+                <li className="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-sky-700"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span className="text-lg">Experiences</span>
+                </li>
+              </a>
+              <Link to="http://blog.fjalla.is">
+                <li className="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-sky-700"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span className="text-lg">Check out our blog</span>
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
@@ -71,7 +76,7 @@ const IndexPage = () => {
         </div>
 
         {/* Section :: Featured Experiences */}
-        <div className="flex justify-center">
+        <div id="experiences" className="flex justify-center">
           <div className="w-full max-w-screen-lg p-6">
             {/* Section Heading */}
             <h1 className="text-3xl md:text-5xl text-stone-700 font-light text-center mt-24">
@@ -79,78 +84,98 @@ const IndexPage = () => {
             </h1>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12 gap-6">
-              <li className="hover:shadow-md cursor-pointer">
-                <StaticImage
-                  src="../images/thorsmork.webp"
-                  alt="A mountain graphic"
-                  className="h-64 md:h-80"
-                />
-                <div className="flex flex-col items-center p-3">
-                  <h2 className="text-3xl font-thin">Þórsmörk</h2>
-                  <span>From 29.900 ISK/PERS.</span>
-                </div>
-              </li>
-              <li className="hover:shadow-md cursor-pointer">
-                <StaticImage
-                  src="../images/brennisteinsalda.jpg"
-                  alt="A mountain graphic"
-                  className="h-64 md:h-80"
-                />
-                <div className="flex flex-col items-center p-3">
-                  <h2 className="text-3xl font-thin">Landmannalaugar</h2>
-                  <span>From 29.900 ISK/PERS.</span>
-                </div>
-              </li>
-              <li className="hover:shadow-md cursor-pointer">
-                <StaticImage
-                  src="../images/fagradalsfjall.webp"
-                  alt="A mountain graphic"
-                  className="h-64 md:h-80"
-                />
-                <div className="flex flex-col items-center p-3">
-                  <h2 className="text-3xl font-thin">Fagradalsfjall</h2>
-                  <span>From 19.900 ISK/PERS.</span>
-                </div>
-              </li>
-              <li className="hover:shadow-md cursor-pointer">
-                <StaticImage
-                  src="../images/botnssulur.webp"
-                  alt="A mountain graphic"
-                  className="h-64 md:h-80"
-                />
-                <div className="flex flex-col items-center p-3">
-                  <h2 className="text-3xl font-thin">Botnssúlur</h2>
-                  <span>From 29.900 ISK/PERS.</span>
-                </div>
-              </li>
-              <li className="hover:shadow-md cursor-pointer">
-                <StaticImage
-                  src="../images/stakkholtsgja.jpg"
-                  alt="A mountain graphic"
-                  className="h-64 md:h-80"
-                />
-                <div className="flex flex-col items-center p-3">
-                  <h2 className="text-3xl font-thin">Fimmvörðuháls</h2>
-                  <span>From 39.900 ISK/PERS.</span>
-                </div>
-              </li>
-              <li className="hover:shadow-md cursor-pointer">
-                <StaticImage
-                  src="../images/thorhandstand.jpg"
-                  alt="A mountain graphic"
-                  className="h-64 md:h-80"
-                />
-                <div className="flex flex-col items-center p-3">
-                  <h2 className="text-3xl font-thin">Laugavegur</h2>
-                  <span>From 159.900 ISK/PERS.</span>
-                </div>
-              </li>
+              <Link to="/experience/thorsmork">
+                <li className="hover:shadow-md cursor-pointer">
+                  <StaticImage
+                    src="../images/thorsmork.webp"
+                    alt="A mountain graphic"
+                    className="h-64 md:h-80"
+                  />
+                  <div className="flex flex-col items-center p-3">
+                    <h2 className="text-3xl font-thin">Þórsmörk</h2>
+                    <span>From 29.900 ISK/PERS.</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="/experience/landmannalaugar">
+                <li className="hover:shadow-md cursor-pointer">
+                  <StaticImage
+                    src="../images/brennisteinsalda.jpg"
+                    alt="A mountain graphic"
+                    className="h-64 md:h-80"
+                  />
+                  <div className="flex flex-col items-center p-3">
+                    <h2 className="text-3xl font-thin">Landmannalaugar</h2>
+                    <span>From 29.900 ISK/PERS.</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="/experience/fagradalsfjall">
+                <li className="hover:shadow-md cursor-pointer">
+                  <StaticImage
+                    src="../images/fagradalsfjall.webp"
+                    alt="A mountain graphic"
+                    className="h-64 md:h-80"
+                  />
+                  <div className="flex flex-col items-center p-3">
+                    <h2 className="text-3xl font-thin">Fagradalsfjall</h2>
+                    <span>From 19.900 ISK/PERS.</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="/experience/botnssulur">
+                <li className="hover:shadow-md cursor-pointer">
+                  <StaticImage
+                    src="../images/botnssulur.webp"
+                    alt="A mountain graphic"
+                    className="h-64 md:h-80"
+                  />
+                  <div className="flex flex-col items-center p-3">
+                    <h2 className="text-3xl font-thin">Botnssúlur</h2>
+                    <span>From 29.900 ISK/PERS.</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="/experience/fimmvorduhals">
+                <li className="hover:shadow-md cursor-pointer">
+                  <StaticImage
+                    src="../images/stakkholtsgja.jpg"
+                    alt="A mountain graphic"
+                    className="h-64 md:h-80"
+                  />
+                  <div className="flex flex-col items-center p-3">
+                    <h2 className="text-3xl font-thin">Fimmvörðuháls</h2>
+                    <span>From 39.900 ISK/PERS.</span>
+                  </div>
+                </li>
+              </Link>
+
+              <Link to="/experience/laugavegur">
+                <li className="hover:shadow-md cursor-pointer">
+                  <StaticImage
+                    src="../images/thorhandstand.jpg"
+                    alt="A mountain graphic"
+                    className="h-64 md:h-80"
+                  />
+                  <div className="flex flex-col items-center p-3">
+                    <h2 className="text-3xl font-thin">Laugavegur</h2>
+                    <span>From 159.900 ISK/PERS.</span>
+                  </div>
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
 
         {/* Section :: Meet our people */}
-        <div className="flex justify-center bg-gradient-to-b from-stone-100 to-whitebg-stone-100">
+        <div
+          id="about-us"
+          className="flex justify-center bg-gradient-to-b from-stone-100 to-whitebg-stone-100"
+        >
           <div className="w-full max-w-screen-lg p-6">
             {/* Section Heading */}
             <h1 className="text-3xl md:text-5xl text-stone-700 font-light text-center mt-24">
@@ -271,8 +296,8 @@ const IndexPage = () => {
               </p>
               <p className="text-lg mt-6">
                 Travel deep into the mountains with us on our specially modified
-                superjeeps on the less travelled roads and hike to find the gems
-                that you will remember for the rest of your life.
+                superjeeps on the less travelled roads and hike to find the
+                hidden gems that you will remember for the rest of your life.
               </p>
 
               <p className="text-lg mt-6">
@@ -291,63 +316,73 @@ const IndexPage = () => {
         </div>
 
         {/* Section :: Get in touch */}
-        <div className="flex justify-center">
+        <div id="contact-us" className="flex justify-center">
           <div className="w-full max-w-screen-lg p-6">
             {/* Section Heading */}
             <h1 className="text-3xl md:text-5xl text-stone-700 font-light text-center mt-24">
               Get in <span className="text-sky-700">touch</span>
             </h1>
             <ul className="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-                <span className="text-2xl">fjalla@fjalla.is</span>
-              </li>
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                <span className="text-2xl">(354) 888 888 9</span>
-              </li>
+              <a href="mailto:fjalla@fjalla.is">
+                <li className="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                  <span className="text-2xl">fjalla@fjalla.is</span>
+                </li>
+              </a>
+              <a href="tel:+3548888889">
+                <li className="flex gap-2 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  <span className="text-2xl">(354) 888 888 9</span>
+                </li>
+              </a>
             </ul>
             <ul className="mt-12 flex flex-row gap-12 justify-center items-center">
-              <li>
-                <StaticImage
-                  src="../images/facebook-brands.svg"
-                  alt="A mountain graphic"
-                  width={48}
-                  height={48}
-                />
-              </li>
-              <li>
-                <StaticImage
-                  src="../images/facebook-messenger-brands.svg"
-                  alt="A mountain graphic"
-                  width={48}
-                  height={48}
-                  className="text-sky-700"
-                />
-              </li>
-              <li>
-                <StaticImage
-                  src="../images/Instagram_icon.png.webp"
-                  alt="A mountain graphic"
-                  width={48}
-                  height={48}
-                />
-              </li>
+              <a href="http://facebook.com/fjallathjonustan">
+                <li>
+                  <StaticImage
+                    src="../images/facebook-brands.svg"
+                    alt="A mountain graphic"
+                    width={48}
+                    height={48}
+                  />
+                </li>
+              </a>
+              <a href="http://m.me/fjallathjonustan">
+                <li>
+                  <StaticImage
+                    src="../images/facebook-messenger-brands.svg"
+                    alt="A mountain graphic"
+                    width={48}
+                    height={48}
+                    className="text-sky-700"
+                  />
+                </li>
+              </a>
+              <a href="http://instagram.com/handstandingviking">
+                <li>
+                  <StaticImage
+                    src="../images/Instagram_icon.png.webp"
+                    alt="A mountain graphic"
+                    width={48}
+                    height={48}
+                  />
+                </li>
+              </a>
             </ul>
           </div>
         </div>

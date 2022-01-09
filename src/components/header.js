@@ -7,21 +7,27 @@ const Header = ({ siteTitle }) => (
   <header className="flex justify-center">
     <div className="w-full max-w-screen-lg p-6 flex flex-row items-center">
       {/* Brand */}
-      <Link to="/" className="text-stone-700">
+      <Link to="/">
         <StaticImage
           src="../images/black-mountain.svg"
           alt="A mountain graphic"
           className="mr-3"
         />
-        <span className=" text-xl">Fjallaþjónustan</span>
+        <span className="text-stone-700 text-xl">Fjallaþjónustan</span>
       </Link>
 
       {/* Navigation */}
       <div className="ml-auto">
         <ul className="hidden md:flex gap-6">
-          <li className="text-lg">Experiences</li>
-          <li className="text-lg">About us</li>
-          <li className="text-lg">Get in touch</li>
+          <a href="/#experiences">
+            <li className="text-lg">Experiences</li>
+          </a>
+          <a href="/#about-us">
+            <li className="text-lg">About us</li>
+          </a>
+          <a href="#contact-us">
+            <li className="text-lg">Get in touch</li>
+          </a>
         </ul>
         <a className="md:hidden">
           <svg
