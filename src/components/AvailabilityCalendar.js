@@ -125,57 +125,110 @@ export default class AvailabilityCalendar extends React.Component {
     }
 
     return (
-      <ul
-        className="grid grid-cols-7"
-        data-selectedyear={this.state.selectedDate.year}
-        data-selectedmonth={this.state.selectedDate.month}
-        data-selectedday={this.state.selectedDate.day}
-      >
-        <li className="col-span-7 flex items-center justify-center bg-sky-700 p-6">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10 mr-auto text-white"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            onClick={this.previousMonth}
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-          <div className="flex flex-col gap-3 items-center justify-center">
-            <span className="text-2xl text-white">
-              {MonthNames[this.state.displayMonth]}
-            </span>
-            <span className="text-2xl text-white">
-              {this.state.displayYear}
-            </span>
+      <>
+        <div className="flex">
+          <span className="text-2xl py-6">Participants</span>
+          <div className="ml-auto flex items-center justify-center">
+            <div className="p-6 cursor-pointer hover:text-red-700">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <span className="text-2xl px-6">1</span>
+            <div className="p-6 cursor-pointer hover:text-green-700">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
           </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-10 w-10 ml-auto text-white"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            onClick={this.nextMonth}
-          >
-            <path
-              fill-rule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </li>
-
-        {["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map(weekDay => (
-          <li className="flex items-center justify-center bg-stone-100 p-6">
-            {weekDay}
+        </div>
+        <ul
+          className="grid grid-cols-7"
+          data-selectedyear={this.state.selectedDate.year}
+          data-selectedmonth={this.state.selectedDate.month}
+          data-selectedday={this.state.selectedDate.day}
+        >
+          <li className="col-span-7 flex items-center justify-center bg-sky-700 p-6">
+            <div
+              className="mr-auto p-6 cursor-pointer text-white hover:text-stone-300"
+              onClick={this.previousMonth}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className="flex flex-col gap-3 items-center justify-center">
+              <span className="text-2xl text-white">
+                {MonthNames[this.state.displayMonth]}
+              </span>
+              <span className="text-2xl text-white">
+                {this.state.displayYear}
+              </span>
+            </div>
+            <div
+              className="ml-auto p-6 cursor-pointer text-white hover:text-stone-300"
+              onClick={this.nextMonth}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
           </li>
-        ))}
 
-        {days}
-      </ul>
+          {["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map(weekDay => (
+            <li className="flex items-center justify-center bg-stone-100 p-6">
+              {weekDay}
+            </li>
+          ))}
+
+          {days}
+        </ul>
+        <div className="flex flex-col text-right items-end mt-6">
+          <span className="text-2xl">3 x 29.900 ISK</span>
+          <span className="text-2xl">
+            TOTAL <strong className="font-medium">89.700 ISK</strong>
+          </span>
+          <button className="mt-3 py-6 px-24 bg-sky-700 hover:bg-sky-800 text-white">
+            <span className="text-2xl">Book now</span>
+          </button>
+        </div>
+      </>
     )
   }
 }
