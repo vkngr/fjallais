@@ -78,6 +78,25 @@ export default class BookingDialog extends React.Component {
                           alt="A mountain graphic"
                         />
                       </div>
+                      <div className="absolute top-6 right-6 md:right-24 group">
+                        <div
+                          className="p-6 cursor-pointer"
+                          onClick={this.closeModal}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-white group-hover:text-red-100"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
                     <div className="flex flex-col px-6 md:px-24 mt-6">
                       <span className="text-md md:text-lg font-medium">
@@ -185,17 +204,10 @@ export default class BookingDialog extends React.Component {
                       </span>
                     </div>
                     <div className="ml-0 md:ml-auto flex flex-col md:flex-row gap-3 px-6 md:px-24 py-6">
-                      <button
-                        type="button"
-                        className="inline-flex justify-center w-full md:w-auto px-4 py-4 md:py-2 text-lg rounded-md bg-red-700 hover:bg-red-800 text-white"
-                        onClick={this.closeModal}
-                      >
-                        Close dialog
-                      </button>
                       <input
                         type="submit"
                         value="Confirm booking request"
-                        className="cursor-pointer inline-flex justify-center w-full md:w-auto px-4 py-4 md:py-2 text-lg rounded-md bg-green-700 hover:bg-green-800 text-white"
+                        className="cursor-pointer inline-flex justify-center w-full md:w-auto px-6 py-3 text-lg rounded-md bg-green-700 hover:bg-green-800 text-white"
                       />
                     </div>
                   </form>
