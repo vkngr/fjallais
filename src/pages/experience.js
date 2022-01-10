@@ -65,7 +65,7 @@ const Experience = ({ data }) => {
 
               {/* Heading Tags */}
               <ul className="mt-12 flex flex-row flex-wrap gap-6">
-                {experience.type.map(type => (
+                {experience.types.map(type => (
                   <li>
                     <span className="text-lg">{type.name}</span>
                   </li>
@@ -131,24 +131,11 @@ const Experience = ({ data }) => {
           <div className="flex justify-center">
             <div className="w-full max-w-screen-lg p-6">
               <ul className="mt-12 flex flex-row flex-wrap gap-6">
-                <li>
-                  <span className="text-lg">Free pick-up</span>
-                </li>
-                <li>
-                  <span className="text-lg">12 hours duration</span>
-                </li>
-                <li>
-                  <span className="text-lg">Departure at 09:00</span>
-                </li>
-                <li>
-                  <span className="text-lg">Suitable for everyone</span>
-                </li>
-                <li>
-                  <span className="text-lg">Professional guide</span>
-                </li>
-                <li>
-                  <span className="text-lg">Transportation in super-jeep</span>
-                </li>
+                {experience.tags.map(tag => (
+                  <li>
+                    <span className="text-lg">{tag.name}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -363,14 +350,16 @@ export const query = graphql`
     contentfulExperience(slug: { eq: $slug }) {
       slug
       heading
-      type {
+      types {
         name
       }
       image {
         gatsbyImageData
       }
       imageDescription
-      duration
+      tags {
+        name
+      }
       body {
         raw
       }

@@ -29,10 +29,14 @@ export default class AvailabilityCalendar extends React.Component {
       selectedDate: { year: 2022, month: 0, day: dateToday.getDate() },
       displayMonth: dateToday.getMonth(),
       displayYear: dateToday.getFullYear(),
+      participantCount: 1,
+      price: 29900,
     }
 
     this.previousMonth = this.previousMonth.bind(this)
     this.nextMonth = this.nextMonth.bind(this)
+    this.removeParticipant = this.removeParticipant.bind(this)
+    this.addParticipant = this.addParticipant.bind(this)
   }
 
   previousMonth() {
@@ -42,6 +46,19 @@ export default class AvailabilityCalendar extends React.Component {
         displayMonth: 11,
       })
     else this.setState({ displayMonth: this.state.displayMonth - 1 })
+  }
+
+  removeParticipant() {
+    if (this.state.participantCount > 1)
+      this.setState({
+        participantCount: this.state.participantCount - 1,
+      })
+  }
+
+  addParticipant() {
+    this.setState({
+      participantCount: this.state.participantCount + 1,
+    })
   }
 
   nextMonth() {
@@ -129,7 +146,10 @@ export default class AvailabilityCalendar extends React.Component {
         <div className="flex">
           <span className="text-2xl py-6">Participants</span>
           <div className="ml-auto flex items-center justify-center">
-            <div className="p-6 cursor-pointer hover:text-red-700">
+            <div
+              className="p-6 cursor-pointer hover:text-red-700"
+              onClick={this.removeParticipant}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -143,8 +163,11 @@ export default class AvailabilityCalendar extends React.Component {
                 />
               </svg>
             </div>
-            <span className="text-2xl px-6">1</span>
-            <div className="p-6 cursor-pointer hover:text-green-700">
+            <span className="text-2xl px-6">{this.state.participantCount}</span>
+            <div
+              className="p-6 cursor-pointer hover:text-green-700"
+              onClick={this.addParticipant}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -220,9 +243,19 @@ export default class AvailabilityCalendar extends React.Component {
           {days}
         </ul>
         <div className="flex flex-col text-right items-end mt-6">
-          <span className="text-2xl">3 x 29.900 ISK</span>
           <span className="text-2xl">
-            TOTAL <strong className="font-medium">89.700 ISK</strong>
+            {this.state.participantCount} x{" "}
+            {String(this.state.price).replace(/(.)(?=(\d{3})+$)/g, "$1.")} ISK
+          </span>
+          <span className="text-2xl">
+            TOTAL{" "}
+            <strong className="font-medium">
+              {String(this.state.participantCount * this.state.price).replace(
+                /(.)(?=(\d{3})+$)/g,
+                "$1."
+              )}{" "}
+              ISK
+            </strong>
           </span>
           <button className="mt-3 py-6 px-24 bg-sky-700 hover:bg-sky-800 text-white">
             <span className="text-2xl">Book now</span>
