@@ -24,10 +24,10 @@ const IndexPage = () => {
             {/* Hero Navigation */}
             <ul className="mt-12 flex flex-col md:flex-row gap-6">
               <a href="#experiences">
-                <li className="flex gap-2 items-center">
+                <li className="flex gap-2 items-center group">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-sky-700"
+                    className="h-6 w-6 text-sky-700 group-hover:text-sky-900"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -41,10 +41,10 @@ const IndexPage = () => {
                 </li>
               </a>
               <Link to="http://blog.fjalla.is">
-                <li className="flex gap-2 items-center">
+                <li className="flex gap-2 items-center group">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-sky-700"
+                    className="h-6 w-6 text-sky-700 group-hover:text-sky-900"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -324,30 +324,34 @@ const IndexPage = () => {
             </h1>
             <ul className="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
               <a href="mailto:fjalla@fjalla.is">
-                <li className="flex gap-2 items-center">
+                <li className="flex gap-2 items-center group">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="h-6 w-6 group-hover:text-stone-300"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span className="text-2xl">fjalla@fjalla.is</span>
+                  <span className="text-2xl group-hover:text-stone-300">
+                    fjalla@fjalla.is
+                  </span>
                 </li>
               </a>
               <a href="tel:+3548888889">
-                <li className="flex gap-2 items-center">
+                <li className="flex gap-2 items-center group">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="h-6 w-6 group-hover:text-stone-300"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
-                  <span className="text-2xl">(354) 888 888 9</span>
+                  <span className="text-2xl group-hover:text-stone-300">
+                    (354) 888 888 9
+                  </span>
                 </li>
               </a>
             </ul>
@@ -359,6 +363,7 @@ const IndexPage = () => {
                     alt="A mountain graphic"
                     width={48}
                     height={48}
+                    className="hover:saturate-50"
                   />
                 </li>
               </a>
@@ -369,7 +374,7 @@ const IndexPage = () => {
                     alt="A mountain graphic"
                     width={48}
                     height={48}
-                    className="text-sky-700"
+                    className="hover:saturate-50"
                   />
                 </li>
               </a>
@@ -380,6 +385,7 @@ const IndexPage = () => {
                     alt="A mountain graphic"
                     width={48}
                     height={48}
+                    className="hover:saturate-50"
                   />
                 </li>
               </a>
@@ -424,14 +430,14 @@ const IndexPage = () => {
             <ul className="flex flex-row gap-6">
               <Link to="/terms-and-conditions">
                 <li>
-                  <span className="text-white font-2xl">
+                  <span className="text-white hover:text-stone-300 font-2xl">
                     Terms & Conditions
                   </span>
                 </li>
               </Link>
               <Link to="/cancellation-policy">
                 <li>
-                  <span className="text-white font-2xl">
+                  <span className="text-white hover:text-stone-300 font-2xl">
                     Cancellation Policy
                   </span>
                 </li>

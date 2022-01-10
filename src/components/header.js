@@ -13,20 +13,20 @@ const Header = ({ siteTitle }) => (
           alt="A mountain graphic"
           className="mr-3"
         />
-        <span className="text-stone-700 text-xl">Fjallaþjónustan</span>
+        <span className="text-stone-700 text-xl ">Fjallaþjónustan</span>
       </Link>
 
       {/* Navigation */}
       <div className="ml-auto">
         <ul className="hidden md:flex gap-6">
           <a href="/#experiences">
-            <li className="text-lg">Experiences</li>
+            <li className="text-lg hover:text-stone-300">Experiences</li>
           </a>
           <a href="/#about-us">
-            <li className="text-lg">About us</li>
+            <li className="text-lg hover:text-stone-300">About us</li>
           </a>
           <a href="#contact-us">
-            <li className="text-lg">Get in touch</li>
+            <li className="text-lg hover:text-stone-300">Get in touch</li>
           </a>
         </ul>
         <a className="md:hidden">

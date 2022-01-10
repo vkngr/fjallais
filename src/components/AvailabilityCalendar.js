@@ -241,6 +241,13 @@ export default class AvailabilityCalendar extends React.Component {
         </ul>
         <div className="flex flex-col text-right items-end mt-6">
           <span className="text-2xl">
+            {new Date(
+              this.state.selectedDate.year,
+              this.state.selectedDate.month,
+              this.state.selectedDate.day
+            ).toDateString()}
+          </span>
+          <span className="text-2xl">
             {this.state.participantCount} x{" "}
             {String(this.state.price).replace(/(.)(?=(\d{3})+$)/g, "$1.")} ISK
           </span>
