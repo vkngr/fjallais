@@ -80,6 +80,38 @@ export default class BookingDialog extends React.Component {
                       </div>
                     </div>
                     <div className="flex flex-col px-6 md:px-24 mt-6">
+                      <span className="text-md md:text-lg font-medium">
+                        Order summary
+                      </span>
+                      <span className="text-md md:text-lg">
+                        {this.props.calendar.state.experience.seoTitle}
+                      </span>
+                      <span className="text-md md:text-lg">
+                        {new Date(
+                          this.props.calendar.state.selectedDate.year,
+                          this.props.calendar.state.selectedDate.month,
+                          this.props.calendar.state.selectedDate.day
+                        ).toDateString()}
+                      </span>
+                      <span className="text-md md:text-lg">
+                        {this.props.calendar.state.participantCount} x{" "}
+                        {String(
+                          this.props.calendar.state.experience.priceIsk
+                        ).replace(/(.)(?=(\d{3})+$)/g, "$1.")}{" "}
+                        ISK
+                      </span>
+                      <span className="text-md md:text-lg">
+                        TOTAL{" "}
+                        <strong className="font-medium">
+                          {String(
+                            this.props.calendar.state.participantCount *
+                              this.props.calendar.state.experience.priceIsk
+                          ).replace(/(.)(?=(\d{3})+$)/g, "$1.")}{" "}
+                          ISK
+                        </strong>
+                      </span>
+                    </div>
+                    <div className="flex flex-col px-6 md:px-24 mt-6">
                       <span className="text-lg font-medium">
                         Customer details
                       </span>
@@ -140,38 +172,7 @@ export default class BookingDialog extends React.Component {
                         />
                       </div>
                     </div>
-                    <div className="flex flex-col px-6 md:px-24 mt-6">
-                      <span className="text-md md:text-lg font-medium">
-                        Order summary
-                      </span>
-                      <span className="text-md md:text-lg">
-                        {this.props.calendar.state.experience.seoTitle}
-                      </span>
-                      <span className="text-md md:text-lg">
-                        {new Date(
-                          this.props.calendar.state.selectedDate.year,
-                          this.props.calendar.state.selectedDate.month,
-                          this.props.calendar.state.selectedDate.day
-                        ).toDateString()}
-                      </span>
-                      <span className="text-md md:text-lg">
-                        {this.props.calendar.state.participantCount} x{" "}
-                        {String(
-                          this.props.calendar.state.experience.priceIsk
-                        ).replace(/(.)(?=(\d{3})+$)/g, "$1.")}{" "}
-                        ISK
-                      </span>
-                      <span className="text-md md:text-lg">
-                        TOTAL{" "}
-                        <strong className="font-medium">
-                          {String(
-                            this.props.calendar.state.participantCount *
-                              this.props.calendar.state.experience.priceIsk
-                          ).replace(/(.)(?=(\d{3})+$)/g, "$1.")}{" "}
-                          ISK
-                        </strong>
-                      </span>
-                    </div>
+
                     <div className="flex gap-3 items-center px-6 md:px-24 mt-6">
                       <input
                         required
