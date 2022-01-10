@@ -422,12 +422,20 @@ const IndexPage = () => {
           </div>
           <div className="absolute z-20 bottom-0 ml-6 md:ml-0 md:mr-6 md:right-0 mb-6">
             <ul className="flex flex-row gap-6">
-              <li>
-                <span className="text-white font-2xl">Terms & Conditions</span>
-              </li>
-              <li>
-                <span className="text-white font-2xl">Cancellation Policy</span>
-              </li>
+              <Link to="/terms-and-conditions">
+                <li>
+                  <span className="text-white font-2xl">
+                    Terms & Conditions
+                  </span>
+                </li>
+              </Link>
+              <Link to="/cancellation-policy">
+                <li>
+                  <span className="text-white font-2xl">
+                    Cancellation Policy
+                  </span>
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
