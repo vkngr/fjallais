@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
     "gatsby": "^4.4.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",
