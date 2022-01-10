@@ -17,7 +17,7 @@ exports.createPages = async function ({ actions, graphql }) {
     const slug = edge.node.slug
 
     actions.createPage({
-      path: "/experience/" + slug,
+      path: "experience/" + slug,
       component: require.resolve(`./src/pages/experience.js`),
       context: { slug: slug },
     })

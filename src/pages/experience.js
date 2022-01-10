@@ -345,7 +345,7 @@ const Experience = ({ data }) => {
 export default Experience
 
 export const query = graphql`
-  query ($slug: String!) {
+  query Experience($slug: String!) {
     contentfulExperience(slug: { eq: $slug }) {
       slug
       heading
