@@ -46,7 +46,6 @@ const Experience = ({ data }) => {
     )
   } else {
     const experience = data.contentfulExperience
-    console.log(experience)
     return (
       <Layout>
         <Seo title="Experience" />

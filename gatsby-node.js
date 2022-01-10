@@ -13,9 +13,6 @@ exports.createPages = async function ({ actions, graphql }) {
     `
   )
 
-  console.log("experiences")
-  console.log(data)
-
   data.allContentfulExperience.edges.forEach(edge => {
     const slug = edge.node.slug
 

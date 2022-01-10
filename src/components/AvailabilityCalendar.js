@@ -93,7 +93,7 @@ export default class AvailabilityCalendar extends React.Component {
       ).getDate();
       i++
     ) {
-      let flag = "available"
+      let flag = "bg-stone-200 hover:bg-stone-300 cursor-pointer available"
       if (
         blockedDates.some(
           e =>
@@ -120,12 +120,9 @@ export default class AvailabilityCalendar extends React.Component {
         flag = "bg-green-700 hover:bg-green-700 text-white cursor-default"
       days.push(
         <li
-          className={
-            "flex items-center justify-center bg-stone-200 hover:bg-stone-300 cursor-pointer p-6 " +
-            flag
-          }
+          className={"flex items-center justify-center p-6 " + flag}
           onClick={() =>
-            flag == "available"
+            flag.includes("available")
               ? this.setState({
                   selectedDate: {
                     year: this.state.displayYear,
