@@ -198,7 +198,7 @@ export default class AvailabilityCalendar extends React.Component {
               {this.state.participantCount}
             </span>
             <div
-              className="p-6 pr-0 cursor-pointer hover:text-green-700"
+              className="p-3 sm:p-6 pr-0 sm:pr-0 cursor-pointer hover:text-green-700"
               onClick={this.addParticipant}
               onKeyDown={e =>
                 e.key === "Enter" ? this.addParticipant() : null
