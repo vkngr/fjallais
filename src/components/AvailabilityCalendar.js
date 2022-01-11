@@ -167,60 +167,6 @@ export default class AvailabilityCalendar extends React.Component {
 
     return (
       <>
-        <div className="flex px-6 sm:px-0">
-          <div className="flex items-center py-3 sm:py-6">
-            <span className="text-lg sm:text-2xl">Participants</span>
-          </div>
-          <div className="ml-auto flex items-center justify-center">
-            <div
-              className="p-3 sm:p-6 cursor-pointer hover:text-red-700"
-              onClick={this.removeParticipant}
-              onKeyDown={e =>
-                e.key === "Enter" ? this.removeParticipant() : null
-              }
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <span className="text-lg sm:text-2xl px-3 sm:px-6">
-              {this.state.participantCount}
-            </span>
-            <div
-              className="p-3 sm:p-6 pr-0 sm:pr-0 cursor-pointer hover:text-green-700"
-              onClick={this.addParticipant}
-              onKeyDown={e =>
-                e.key === "Enter" ? this.addParticipant() : null
-              }
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
         <ul
           className="grid grid-cols-7 w-full sm:w-auto"
           data-selectedyear={this.state.selectedDate.year}
@@ -292,7 +238,61 @@ export default class AvailabilityCalendar extends React.Component {
 
           {days}
         </ul>
-        <div className="px-6 sm:px-0 flex flex-col text-right items-end mt-6">
+        <div className="flex items-center justify-end px-6 sm:px-0 mt-6">
+          <div className="flex items-center py-3 sm:py-6">
+            <span className="text-lg sm:text-2xl">Participants</span>
+          </div>
+          <div className="flex items-center justify-center">
+            <div
+              className="p-3 sm:p-6 cursor-pointer hover:text-red-700"
+              onClick={this.removeParticipant}
+              onKeyDown={e =>
+                e.key === "Enter" ? this.removeParticipant() : null
+              }
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <span className="text-lg sm:text-2xl px-3 sm:px-6">
+              {this.state.participantCount}
+            </span>
+            <div
+              className="p-3 sm:p-6 -mr-3 sm:-mr-6 cursor-pointer hover:text-green-700"
+              onClick={this.addParticipant}
+              onKeyDown={e =>
+                e.key === "Enter" ? this.addParticipant() : null
+              }
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div className="px-6 sm:px-0 flex flex-col text-right items-end">
           <span className="text-xl sm:text-2xl">
             {new Date(
               this.state.selectedDate.year,
