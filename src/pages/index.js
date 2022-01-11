@@ -40,7 +40,7 @@ const IndexPage = () => {
                   <span className="text-lg">Experiences</span>
                 </li>
               </a>
-              <Link to="http://blog.fjalla.is">
+              <a href="http://blog.fjalla.is">
                 <li className="flex gap-2 items-center group">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ const IndexPage = () => {
                   </svg>
                   <span className="text-lg">Check out our blog</span>
                 </li>
-              </Link>
+              </a>
             </ul>
           </div>
         </div>
@@ -68,7 +68,7 @@ const IndexPage = () => {
             alt="A mountain graphic"
             className="min-h-[420px] mt-24"
           />
-          <div className="absolute bottom-6 right-6 z-10">
+          <div className="absolute bottom-6 right-auto left-6 sm:left-auto sm:right-6 z-10">
             <span className="text-white text-lg">
               Básar Hut & Campsite, Þórsmörk
             </span>
@@ -430,14 +430,14 @@ const IndexPage = () => {
             <ul className="flex flex-row gap-6">
               <Link to="/terms-and-conditions">
                 <li>
-                  <span className="text-white hover:text-stone-300 font-2xl">
+                  <span className="text-white hover:text-stone-300 text-sm sm:text-md">
                     Terms & Conditions
                   </span>
                 </li>
               </Link>
               <Link to="/cancellation-policy">
                 <li>
-                  <span className="text-white hover:text-stone-300 font-2xl">
+                  <span className="text-white hover:text-stone-300 text-sm sm:text-md">
                     Cancellation Policy
                   </span>
                 </li>

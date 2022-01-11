@@ -191,7 +191,7 @@ export default class BookingDialog extends React.Component {
                     <div className="flex gap-3 items-center px-6 mt-6 w-full max-w-[600px]">
                       <input
                         required
-                        className="w-10 h-10 md:w-6 md:h-6"
+                        className="w-8 h-8 md:w-6 md:h-6"
                         type="checkbox"
                       />
                       <span className="text-md md:text-lg">

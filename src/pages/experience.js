@@ -15,7 +15,7 @@ import ImageDialog from "../components/ImageDialog"
 
 const Bold = ({ children }) => <span className="font-medium">{children}</span>
 const Text = ({ children }) => (
-  <p className="text-2xl font-light mt-3 first:mt-0">{children}</p>
+  <p className="text-xl sm:text-2xl font-light mt-3 first:mt-0">{children}</p>
 )
 
 const options = {
@@ -126,7 +126,7 @@ export default class Experience extends React.Component {
                 className="min-h-[420px] mt-24"
               />
 
-              <div className="absolute bottom-6 right-6 z-10">
+              <div className="absolute bottom-6 right-auto left-6 sm:left-auto sm:right-6 z-10">
                 <span className="text-white text-lg">
                   {experience.imageDescription}
                 </span>
@@ -302,14 +302,14 @@ export default class Experience extends React.Component {
                 <ul className="flex flex-row gap-6">
                   <Link to="/terms-and-conditions">
                     <li>
-                      <span className="text-white hover:text-stone-300 font-2xl">
+                      <span className="text-white hover:text-stone-300 text-sm sm:text-md">
                         Terms & Conditions
                       </span>
                     </li>
                   </Link>
                   <Link to="/cancellation-policy">
                     <li>
-                      <span className="text-white hover:text-stone-300 font-2xl">
+                      <span className="text-white hover:text-stone-300 text-sm sm:text-md">
                         Cancellation Policy
                       </span>
                     </li>

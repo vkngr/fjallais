@@ -77,7 +77,7 @@ export default class AvailabilityCalendar extends React.Component {
       days.push(
         <li
           key={"o" + i}
-          className="flex items-center justify-center bg-stone-400 p-6 "
+          className="flex items-center justify-center bg-stone-400 p-3 sm:p-6 "
         >
           <span></span>
         </li>
@@ -129,7 +129,7 @@ export default class AvailabilityCalendar extends React.Component {
       days.push(
         <li
           key={"n" + i}
-          className={"flex items-center justify-center p-6 " + flag}
+          className={"flex items-center justify-center p-3 sm:p-6 " + flag}
           onClick={
             clickable
               ? () =>
@@ -168,10 +168,12 @@ export default class AvailabilityCalendar extends React.Component {
     return (
       <>
         <div className="flex">
-          <span className="text-2xl py-6">Participants</span>
+          <div className="flex items-center py-3 sm:py-6">
+            <span className="text-lg sm:text-2xl">Participants</span>
+          </div>
           <div className="ml-auto flex items-center justify-center">
             <div
-              className="p-6 cursor-pointer hover:text-red-700"
+              className="p-3 sm:p-6 cursor-pointer hover:text-red-700"
               onClick={this.removeParticipant}
               onKeyDown={e =>
                 e.key === "Enter" ? this.removeParticipant() : null
@@ -192,7 +194,9 @@ export default class AvailabilityCalendar extends React.Component {
                 />
               </svg>
             </div>
-            <span className="text-2xl px-6">{this.state.participantCount}</span>
+            <span className="text-lg sm:text-2xl px-3 sm:px-6">
+              {this.state.participantCount}
+            </span>
             <div
               className="p-6 cursor-pointer hover:text-green-700"
               onClick={this.addParticipant}
@@ -218,14 +222,14 @@ export default class AvailabilityCalendar extends React.Component {
           </div>
         </div>
         <ul
-          className="grid grid-cols-7"
+          className="grid grid-cols-7 w-full sm:w-auto"
           data-selectedyear={this.state.selectedDate.year}
           data-selectedmonth={this.state.selectedDate.month}
           data-selectedday={this.state.selectedDate.day}
         >
           <li
             key="head-col"
-            className="col-span-7 flex items-center justify-center bg-sky-700 p-6"
+            className="col-span-7 flex items-center justify-center bg-sky-700 p-3 sm:p-6"
           >
             <div
               role="button"
@@ -280,7 +284,7 @@ export default class AvailabilityCalendar extends React.Component {
           {["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].map(weekDay => (
             <li
               key={weekDay}
-              className="flex items-center justify-center bg-stone-100 p-6"
+              className="flex items-center justify-center bg-stone-100 p-3 sm:p-6"
             >
               <span>{weekDay}</span>
             </li>
@@ -289,14 +293,14 @@ export default class AvailabilityCalendar extends React.Component {
           {days}
         </ul>
         <div className="flex flex-col text-right items-end mt-6">
-          <span className="text-2xl">
+          <span className="text-xl sm:text-2xl">
             {new Date(
               this.state.selectedDate.year,
               this.state.selectedDate.month,
               this.state.selectedDate.day
             ).toDateString()}
           </span>
-          <span className="text-2xl">
+          <span className="text-xl sm:text-2xl">
             {this.state.participantCount} x{" "}
             {String(this.state.experience.priceIsk).replace(
               /(.)(?=(\d{3})+$)/g,
@@ -304,7 +308,7 @@ export default class AvailabilityCalendar extends React.Component {
             )}{" "}
             ISK
           </span>
-          <span className="text-2xl">
+          <span className="text-xl sm:text-2xl">
             TOTAL{" "}
             <strong className="font-medium">
               {String(
@@ -315,9 +319,9 @@ export default class AvailabilityCalendar extends React.Component {
           </span>
           <button
             onClick={() => this.bookingDialog.current.openModal()}
-            className="mt-3 py-6 px-24 bg-sky-700 hover:bg-sky-800 text-white"
+            className="mt-3 bg-sky-700 hover:bg-sky-800 text-white cursor-pointer inline-flex justify-center w-full sm:w-auto px-6 sm:px-12 py-3 rounded-md"
           >
-            <span className="text-2xl">Book now</span>
+            <span className="text-xl sm:text-2xl">Book now</span>
           </button>
         </div>
         <BookingDialog calendar={this} ref={this.bookingDialog} />
