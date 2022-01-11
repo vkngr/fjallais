@@ -7,6 +7,20 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-ZNZQZNXQ2G", // Google Analytics / GA
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `7mck7fbwfpae`,
@@ -28,13 +42,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `fjallais`,
+        short_name: `fjalla`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#0369a1`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        // theme_color: `#0369a1`,
         display: `minimal-ui`,
         icon: `src/images/black-mountain.svg`, // This path is relative to the root of the site.
       },

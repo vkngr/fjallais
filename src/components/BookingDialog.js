@@ -2,6 +2,7 @@ import * as React from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { Fragment } from "react"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 export default class BookingDialog extends React.Component {
   constructor(props) {
@@ -201,8 +202,18 @@ export default class BookingDialog extends React.Component {
                         type="checkbox"
                       />
                       <span className="text-md md:text-lg">
-                        I accept the terms and conditions and cancellation
-                        policy
+                        I accept the{" "}
+                        <Link to="/terms-and-conditions">
+                          <span className="text-sky-700 hover:text-sky-300">
+                            terms and conditions
+                          </span>
+                        </Link>{" "}
+                        and{" "}
+                        <Link to="/cancellation-policy">
+                          <span className="text-sky-700 hover:text-sky-300">
+                            cancellation policy
+                          </span>
+                        </Link>
                       </span>
                     </div>
                     <div className="ml-0 md:ml-auto flex flex-col md:flex-row gap-3 px-6 py-6 w-full max-w-[600px] justify-end">

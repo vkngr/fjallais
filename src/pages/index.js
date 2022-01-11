@@ -174,7 +174,7 @@ const IndexPage = () => {
         {/* Section :: Meet our people */}
         <div
           id="about-us"
-          className="flex justify-center bg-gradient-to-b from-stone-100 to-whitebg-stone-100"
+          className="flex justify-center bg-gradient-to-b from-stone-100 to-white bg-stone-100"
         >
           <div className="w-full max-w-screen-lg p-6">
             {/* Section Heading */}
