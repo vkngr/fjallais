@@ -16,24 +16,72 @@ const MonthNames = [
   "December",
 ]
 const dateToday = new Date()
-const blockedDates = [{ year: 2022, month: 0, day: 11 }]
+const blockedDates = [
+  { year: 2022, month: 0, day: 11 },
+  { year: 2022, month: 0, day: 12 },
+  { year: 2022, month: 0, day: 13 },
+  { year: 2022, month: 0, day: 14 },
+  { year: 2022, month: 0, day: 15 },
+  { year: 2022, month: 0, day: 16 },
+  { year: 2022, month: 0, day: 17 },
+  { year: 2022, month: 0, day: 18 },
+  { year: 2022, month: 0, day: 19 },
+  { year: 2022, month: 0, day: 20 },
+  { year: 2022, month: 0, day: 21 },
+  { year: 2022, month: 0, day: 22 },
+  { year: 2022, month: 0, day: 23 },
+  { year: 2022, month: 0, day: 24 },
+  { year: 2022, month: 0, day: 25 },
+  { year: 2022, month: 0, day: 26 },
+  { year: 2022, month: 0, day: 27 },
+  { year: 2022, month: 0, day: 28 },
+  { year: 2022, month: 0, day: 29 },
+  { year: 2022, month: 0, day: 30 },
+  { year: 2022, month: 0, day: 31 },
+]
 
 export default class AvailabilityCalendar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      selectedDate: { year: 2022, month: 0, day: dateToday.getDate() },
-      displayMonth: dateToday.getMonth(),
-      displayYear: dateToday.getFullYear(),
-      participantCount: 1,
-      experience: this.props.experience,
-    }
     this.bookingDialog = React.createRef()
 
     this.previousMonth = this.previousMonth.bind(this)
     this.nextMonth = this.nextMonth.bind(this)
     this.removeParticipant = this.removeParticipant.bind(this)
     this.addParticipant = this.addParticipant.bind(this)
+
+    let d = { year: 2022, month: 0, day: dateToday.getDate() }
+    let flag = true
+    while (flag) {
+      if (
+        blockedDates.some(
+          e => e.year === d.year && e.month === d.month && e.day === d.day
+        )
+      ) {
+        console.log("blocked")
+        if (d.day + 1 > new Date(d.year, d.month, 0).getDate()) {
+          if (d.month + 1 > 11) {
+            d.year++
+            d.month = 0
+            d.day = 1
+          } else {
+            d.month++
+            d.day = 1
+          }
+        } else d.day++
+      } else {
+        console.log("safe")
+        flag = false
+      }
+    }
+
+    this.state = {
+      selectedDate: d,
+      displayMonth: Math.max(dateToday.getMonth(), d.month),
+      displayYear: Math.max(dateToday.getFullYear(), d.year),
+      participantCount: 1,
+      experience: this.props.experience,
+    }
   }
 
   previousMonth() {

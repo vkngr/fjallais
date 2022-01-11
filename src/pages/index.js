@@ -85,11 +85,11 @@ const IndexPage = () => {
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12 gap-6">
               <Link to="/experience/thorsmork">
-                <li className="hover:shadow-md cursor-pointer">
+                <li className="group cursor-pointer">
                   <StaticImage
                     src="../images/thorsmork.webp"
                     alt="A mountain graphic"
-                    className="h-64 md:h-80"
+                    className="h-64 md:h-80 group-hover:saturate-200"
                   />
                   <div className="flex flex-col items-center p-3">
                     <h2 className="text-3xl font-thin">Þórsmörk</h2>
@@ -99,11 +99,11 @@ const IndexPage = () => {
               </Link>
 
               <Link to="/experience/landmannalaugar">
-                <li className="hover:shadow-md cursor-pointer">
+                <li className="group cursor-pointer">
                   <StaticImage
                     src="../images/brennisteinsalda.jpg"
                     alt="A mountain graphic"
-                    className="h-64 md:h-80"
+                    className="h-64 md:h-80 group-hover:saturate-200"
                   />
                   <div className="flex flex-col items-center p-3">
                     <h2 className="text-3xl font-thin">Landmannalaugar</h2>
@@ -113,11 +113,11 @@ const IndexPage = () => {
               </Link>
 
               <Link to="/experience/fagradalsfjall">
-                <li className="hover:shadow-md cursor-pointer">
+                <li className="group cursor-pointer">
                   <StaticImage
                     src="../images/fagradalsfjall.webp"
                     alt="A mountain graphic"
-                    className="h-64 md:h-80"
+                    className="h-64 md:h-80 group-hover:saturate-200"
                   />
                   <div className="flex flex-col items-center p-3">
                     <h2 className="text-3xl font-thin">Fagradalsfjall</h2>
@@ -127,11 +127,11 @@ const IndexPage = () => {
               </Link>
 
               <Link to="/experience/botnssulur">
-                <li className="hover:shadow-md cursor-pointer">
+                <li className="group cursor-pointer">
                   <StaticImage
                     src="../images/botnssulur.webp"
                     alt="A mountain graphic"
-                    className="h-64 md:h-80"
+                    className="h-64 md:h-80 group-hover:saturate-200"
                   />
                   <div className="flex flex-col items-center p-3">
                     <h2 className="text-3xl font-thin">Botnssúlur</h2>
@@ -141,11 +141,11 @@ const IndexPage = () => {
               </Link>
 
               <Link to="/experience/fimmvorduhals">
-                <li className="hover:shadow-md cursor-pointer">
+                <li className="group cursor-pointer">
                   <StaticImage
                     src="../images/stakkholtsgja.jpg"
                     alt="A mountain graphic"
-                    className="h-64 md:h-80"
+                    className="h-64 md:h-80 group-hover:saturate-200"
                   />
                   <div className="flex flex-col items-center p-3">
                     <h2 className="text-3xl font-thin">Fimmvörðuháls</h2>
@@ -155,11 +155,11 @@ const IndexPage = () => {
               </Link>
 
               <Link to="/experience/laugavegur">
-                <li className="hover:shadow-md cursor-pointer">
+                <li className="group cursor-pointer">
                   <StaticImage
                     src="../images/thorhandstand.jpg"
                     alt="A mountain graphic"
-                    className="h-64 md:h-80"
+                    className="h-64 md:h-80 group-hover:saturate-200"
                   />
                   <div className="flex flex-col items-center p-3">
                     <h2 className="text-3xl font-thin">Laugavegur</h2>

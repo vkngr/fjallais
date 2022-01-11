@@ -158,10 +158,13 @@ export default class Experience extends React.Component {
               <div className="flex justify-center">
                 <div className="w-full max-w-screen-lg p-6">
                   <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {experience.photos.map(photo => (
+                    {experience.photos.map((photo, i) => (
                       <li
                         onClick={() =>
-                          this.imageDialog.current.openModal(photo)
+                          this.imageDialog.current.openModal(
+                            experience.photos,
+                            i
+                          )
                         }
                         key={photo.id}
                       >

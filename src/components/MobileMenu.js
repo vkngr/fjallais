@@ -83,32 +83,38 @@ export default class MobileMenu extends React.Component {
                         </button>
                       </div>
                     </Transition.Child>
-                    <ul className="h-full flex flex-col p-6 bg-white shadow-xl overflow-y-scroll gap-3">
+                    <ul className="h-full flex flex-col bg-white shadow-xl overflow-y-scroll gap-3">
                       {/* Brand */}
-                      <Link to="/" onClick={this.closeModal}>
-                        <li className="flex gap-3">
+                      <li className="px-6 mt-6 flex items-center justify-start">
+                        <Link to="/" onClick={this.closeModal}>
                           <StaticImage
                             src="../images/black-mountain.svg"
                             alt="A mountain graphic"
-                            className="min-h-[32px]"
+                            className="min-h-[32px] max-h-20"
                           />
-                        </li>
-                      </Link>
-                      <a href="/#experiences" onClick={this.closeModal}>
-                        <li className="text-2xl hover:text-stone-300">
-                          Experiences
-                        </li>
-                      </a>
-                      <a href="/#about-us" onClick={this.closeModal}>
-                        <li className="text-2xl hover:text-stone-300">
-                          About us
-                        </li>
-                      </a>
-                      <a href="#contact-us" onClick={this.closeModal}>
-                        <li className="text-2xl hover:text-stone-300">
-                          Get in touch
-                        </li>
-                      </a>
+                        </Link>
+                      </li>
+                      <li className="px-6 mt-3 flex items-center justify-start">
+                        <a href="/#experiences" onClick={this.closeModal}>
+                          <span className="text-2xl hover:text-stone-300">
+                            Experiences
+                          </span>
+                        </a>
+                      </li>
+                      <li className="px-6 mt-3 flex items-center justify-start">
+                        <a href="/#about-us" onClick={this.closeModal}>
+                          <span className="text-2xl hover:text-stone-300">
+                            About us
+                          </span>
+                        </a>
+                      </li>
+                      <li className="px-6 mt-3 flex items-center justify-start">
+                        <a href="#contact-us" onClick={this.closeModal}>
+                          <span className="text-2xl hover:text-stone-300">
+                            Get in touch
+                          </span>
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </Transition.Child>
