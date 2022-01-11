@@ -14,21 +14,27 @@ export default class BookingDialog extends React.Component {
     this.closeModal = this.closeModal.bind(this)
     this.openModal = this.openModal.bind(this)
 
-    document.addEventListener("keydown", e => {
-      if (this.state.isOpen && e.key === "Escape") this.closeModal()
-    })
+    if (typeof window !== undefined) {
+      document.addEventListener("keydown", e => {
+        if (this.state.isOpen && e.key === "Escape") this.closeModal()
+      })
+    }
   }
 
   closeModal() {
     this.setState({ isOpen: false })
-    window.scrollTo(0, this.state.lastScroll)
+    if (typeof window !== undefined) {
+      window.scrollTo(0, this.state.lastScroll)
+    }
   }
 
   openModal() {
     this.setState({ isOpen: true, lastScroll: window.scrollY })
     console.log(this.props.calendar)
 
-    window.scrollTo(0, document.body.scrollHeight)
+    if (typeof window !== undefined) {
+      window.scrollTo(0, document.body.scrollHeight)
+    }
   }
 
   render() {
