@@ -8,19 +8,27 @@ export default class BookingDialog extends React.Component {
     super(props)
     this.state = {
       isOpen: this.props.open || false,
+      lastScroll: 0,
     }
 
     this.closeModal = this.closeModal.bind(this)
     this.openModal = this.openModal.bind(this)
+
+    document.addEventListener("keydown", e => {
+      if (this.state.isOpen && e.key === "Escape") this.closeModal()
+    })
   }
 
   closeModal() {
     this.setState({ isOpen: false })
+    window.scrollTo(0, this.state.lastScroll)
   }
 
   openModal() {
-    this.setState({ isOpen: true })
+    this.setState({ isOpen: true, lastScroll: window.scrollY })
     console.log(this.props.calendar)
+
+    window.scrollTo(0, document.body.scrollHeight)
   }
 
   render() {
@@ -29,22 +37,10 @@ export default class BookingDialog extends React.Component {
         <Transition appear show={this.state.isOpen} as={Fragment}>
           <Dialog
             as="div"
-            className="fixed flex justify-center items-center inset-0 z-10 overflow-y-auto backdrop-blur-md"
-            onClose={this.closeModal}
+            className="fixed flex justify-center items-center inset-0 z-50 lg:z-10 overflow-y-scroll backdrop-blur-md w-full lg:w-auto"
+            onClose={() => {}}
           >
-            <div className="min-h-screen px-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <Dialog.Overlay className="fixed inset-0" />
-              </Transition.Child>
-
+            <div className="min-h-screen text-center">
               {/* This element is to trick the browser into centering the modal contents. */}
               <span
                 className="inline-block h-screen align-middle"
@@ -61,8 +57,8 @@ export default class BookingDialog extends React.Component {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <div className="relative inline-block overflow-hidden text-left align-middle transition-all transform bg-stone-100 shadow-xl rounded-2xl">
-                  <form className="flex flex-col justify-center">
+                <div className="relative z-50 inline-block overflow-hidden text-left align-middle transition-all transform bg-stone-100 shadow-xl rounded-2xl w-full max-w-[520px]">
+                  <form className="flex flex-col justify-center items-center">
                     <div class="relative">
                       <GatsbyImage
                         image={
@@ -72,13 +68,13 @@ export default class BookingDialog extends React.Component {
                         alt="A mountain graphic"
                         className="hover:saturate-50 h-64 w-auto max-w-screen-lg"
                       />
-                      <div className="absolute w-full max-w-screen-lg bottom-6 left-6 md:left-24">
+                      <div className="absolute w-full max-w-screen-lg bottom-6 left-6">
                         <StaticImage
                           src="../images/white-mountain.svg"
                           alt="A mountain graphic"
                         />
                       </div>
-                      <div className="absolute top-6 right-6 md:right-24 group">
+                      <div className="absolute top-6 right-6 group">
                         <div
                           className="p-6 cursor-pointer"
                           onClick={this.closeModal}
@@ -98,7 +94,7 @@ export default class BookingDialog extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col px-6 md:px-24 mt-6">
+                    <div className="flex flex-col px-6 mt-6 w-full max-w-[600px]">
                       <span className="text-md md:text-lg font-medium">
                         Order summary
                       </span>
@@ -130,7 +126,7 @@ export default class BookingDialog extends React.Component {
                         </strong>
                       </span>
                     </div>
-                    <div className="flex flex-col px-6 md:px-24 mt-6">
+                    <div className="flex flex-col px-6 mt-6 w-full max-w-[600px]">
                       <span className="text-lg font-medium">
                         Customer details
                       </span>
@@ -192,7 +188,7 @@ export default class BookingDialog extends React.Component {
                       </div>
                     </div>
 
-                    <div className="flex gap-3 items-center px-6 md:px-24 mt-6">
+                    <div className="flex gap-3 items-center px-6 mt-6 w-full max-w-[600px]">
                       <input
                         required
                         className="w-10 h-10 md:w-6 md:h-6"
@@ -203,7 +199,7 @@ export default class BookingDialog extends React.Component {
                         policy
                       </span>
                     </div>
-                    <div className="ml-0 md:ml-auto flex flex-col md:flex-row gap-3 px-6 md:px-24 py-6">
+                    <div className="ml-0 md:ml-auto flex flex-col md:flex-row gap-3 px-6 py-6 w-full max-w-[600px] justify-end">
                       <input
                         type="submit"
                         value="Confirm booking request"
