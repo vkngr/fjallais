@@ -7,7 +7,7 @@ export default class BookingDialog extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isOpen: this.props.open || false,
+      isOpen: false,
       lastScroll: 0,
     }
 

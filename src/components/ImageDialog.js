@@ -7,7 +7,7 @@ export default class ImageDialog extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isOpen: this.props.open || false,
+      isOpen: false,
       photo: null,
     }
 
