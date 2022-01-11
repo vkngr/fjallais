@@ -179,7 +179,7 @@ export default class Experience extends React.Component {
 
             {/* Section :: Experience Calendar */}
             <div className="flex justify-center">
-              <div className="w-full max-w-screen-lg p-6">
+              <div className="w-full max-w-screen-lg p-0 sm:p-6">
                 <div id="book">
                   <AvailabilityCalendar experience={experience} />
                   <ImageDialog ref={this.imageDialog} />

@@ -167,7 +167,7 @@ export default class AvailabilityCalendar extends React.Component {
 
     return (
       <>
-        <div className="flex">
+        <div className="flex px-6 sm:px-0">
           <div className="flex items-center py-3 sm:py-6">
             <span className="text-lg sm:text-2xl">Participants</span>
           </div>
@@ -198,7 +198,7 @@ export default class AvailabilityCalendar extends React.Component {
               {this.state.participantCount}
             </span>
             <div
-              className="p-6 cursor-pointer hover:text-green-700"
+              className="p-6 pr-0 cursor-pointer hover:text-green-700"
               onClick={this.addParticipant}
               onKeyDown={e =>
                 e.key === "Enter" ? this.addParticipant() : null
@@ -292,7 +292,7 @@ export default class AvailabilityCalendar extends React.Component {
 
           {days}
         </ul>
-        <div className="flex flex-col text-right items-end mt-6">
+        <div className="px-6 sm:px-0 flex flex-col text-right items-end mt-6">
           <span className="text-xl sm:text-2xl">
             {new Date(
               this.state.selectedDate.year,
