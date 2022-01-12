@@ -7,6 +7,13 @@ import Header from "../components/header"
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
+const bookingStatusMessages = [
+  "Booking requested",
+  "Payment requested",
+  "Payment successful",
+  "Booking confirmed",
+]
+
 export default class BookingPage extends React.Component {
   constructor(props) {
     super(props)
@@ -21,7 +28,6 @@ export default class BookingPage extends React.Component {
       orderParticipants: 0,
       orderDate: new Date(),
       orderPriceIsk: 0,
-      bookingStatusMessages: [],
     }
   }
 
@@ -45,7 +51,6 @@ export default class BookingPage extends React.Component {
             orderParticipants: data.orderParticipants,
             orderDate: new Date(data.orderDate),
             orderPriceIsk: data.orderPriceIsk,
-            bookingStatusMessages: data.bookingStatusMessages,
           })
         })
       }
@@ -190,7 +195,7 @@ export default class BookingPage extends React.Component {
 
                 <p className="text-xl font-medium mt-6">Booking status</p>
 
-                {this.state.bookingStatusMessages.map(msg => (
+                {bookingStatusMessages.map((e, i) => (
                   <p className="text-xl font-medium mt-6 ">
                     <div className="flex gap-3 items-center">
                       <svg
@@ -199,13 +204,22 @@ export default class BookingPage extends React.Component {
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
+                        {this.state.bookingStatus >= i ? (
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        ) : (
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
+                        )}
                       </svg>
-                      <span>{msg}</span>
+                      <span>{e}</span>
                     </div>
                   </p>
                 ))}
