@@ -28,7 +28,7 @@ export default class BookingPage extends React.Component {
   componentDidMount() {
     console.log(this.props)
     fetch(
-      "http://46.22.103.95:65535/booking/" +
+      "https://fjallais-api.herokuapp.com/booking/" +
         new URLSearchParams(this.props.location.search).get("bookingNumber")
     ).then(res => {
       if (res.status === 200) {
