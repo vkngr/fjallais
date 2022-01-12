@@ -19,14 +19,14 @@ export default class BookingPage extends React.Component {
     super(props)
     this.state = {
       bookingNumber: 0,
-      bookingStatus: 0,
+      bookingStatus: -1,
       customerName: "",
       customerEmail: "",
       customerPhone: 0,
       orderExperienceId: 0,
       orderExperienceName: "",
       orderParticipants: 0,
-      orderDate: new Date(),
+      orderDate: null,
       orderPriceIsk: 0,
     }
   }
@@ -173,7 +173,8 @@ export default class BookingPage extends React.Component {
                 <p className="text-lg mt-1">{this.state.orderExperienceName}</p>
 
                 <p className="text-lg mt-1">
-                  {new Date(this.state.orderDate).toDateString()}
+                  {this.state.orderDate ??
+                    new Date(this.state.orderDate).toDateString()}
                 </p>
 
                 <p className="text-lg mt-1">
