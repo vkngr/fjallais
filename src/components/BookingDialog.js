@@ -39,7 +39,7 @@ export default class BookingDialog extends React.Component {
   }
 
   handleSubmit(event) {
-    fetch("https://fjallais-api.herokuapp.com/bookings", {
+    fetch("https://44.202.27.8:65535/bookings", {
       method: "POST",
       headers: {
         Accept: "application/json",
