@@ -28,7 +28,7 @@ export default class BookingPage extends React.Component {
   componentDidMount() {
     console.log(this.props)
     fetch(
-      "https://44.202.27.8:65535/booking" +
+      "https://44.202.27.8:65535/booking/" +
         new URLSearchParams(this.props.location.search).get("bookingNumber")
     ).then(res => {
       if (res.status === 200) {
