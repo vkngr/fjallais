@@ -78,11 +78,11 @@ export default class BookingPage extends React.Component {
                     xmlns="http://www.w3.org/2000/svg"
                     className={
                       "h-10 w-10" +
-                      (this.state.bookingStatus === 0
+                      (this.state.bookingStatus === -1
                         ? " text-red-700"
-                        : this.state.bookingStatus === 1
-                        ? " text-yellow-500"
-                        : " text-green-700")
+                        : this.state.bookingStatus === 3
+                        ? " text-green-700"
+                        : " text-yellow-500")
                     }
                     viewBox="0 0 20 20"
                     fill="currentColor"
