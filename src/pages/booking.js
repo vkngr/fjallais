@@ -26,7 +26,7 @@ export default class BookingPage extends React.Component {
       orderExperienceId: 0,
       orderExperienceName: "",
       orderParticipants: 0,
-      orderDate: null,
+      orderDate: new Date(),
       orderPriceIsk: 0,
     }
   }
@@ -173,8 +173,7 @@ export default class BookingPage extends React.Component {
                 <p className="text-lg mt-1">{this.state.orderExperienceName}</p>
 
                 <p className="text-lg mt-1">
-                  {this.state.orderDate ??
-                    new Date(this.state.orderDate).toDateString()}
+                  {new Date(this.state.orderDate).toDateString()}
                 </p>
 
                 <p className="text-lg mt-1">
