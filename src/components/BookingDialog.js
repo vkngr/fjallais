@@ -9,8 +9,14 @@ export default class BookingDialog extends React.Component {
     super(props)
     this.state = {
       isOpen: false,
+      valueName: "",
+      valueEmail: "",
+      valuePhone: 0,
       lastScroll: 0,
     }
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
     this.closeModal = this.closeModal.bind(this)
     this.openModal = this.openModal.bind(this)
@@ -20,6 +26,48 @@ export default class BookingDialog extends React.Component {
         if (this.state.isOpen && e.key === "Escape") this.closeModal()
       })
     }
+  }
+
+  handleChange(event) {
+    const target = event.target
+    const value = target.type === "checkbox" ? target.checked : target.value
+    const name = target.name
+
+    this.setState({
+      [name]: value,
+    })
+  }
+
+  handleSubmit(event) {
+    fetch("http://46.22.103.95:65535/bookings", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        customerName: this.state.valueName,
+        customerEmail: this.state.valueEmail,
+        customerPhone: this.state.valuePhone,
+        orderExperienceId: this.props.calendar.state.experience.contentful_id,
+        orderExperienceName: this.props.calendar.state.experience.seoTitle,
+        orderParticipants: this.props.calendar.state.participantCount,
+        orderDate: new Date(
+          this.props.calendar.state.selectedDate.year,
+          this.props.calendar.state.selectedDate.month,
+          this.props.calendar.state.selectedDate.day
+        ),
+      }),
+    }).then(res => {
+      console.log(res)
+      if (res.status === 200) {
+        res.json().then(data => {
+          console.log(data)
+          window.location.href = "/booking/?bookingNumber=" + data.bookingNumber
+        })
+      }
+    })
+    event.preventDefault()
   }
 
   closeModal() {
@@ -65,7 +113,10 @@ export default class BookingDialog extends React.Component {
                 leaveTo="opacity-0 scale-95"
               >
                 <div className="relative z-50 inline-block overflow-hidden text-left align-middle transition-all transform bg-stone-100 shadow-xl rounded-2xl w-full max-w-[520px]">
-                  <form className="flex flex-col justify-center items-center">
+                  <form
+                    onSubmit={this.handleSubmit}
+                    className="flex flex-col justify-center items-center"
+                  >
                     <div class="relative">
                       <GatsbyImage
                         image={
@@ -155,6 +206,8 @@ export default class BookingDialog extends React.Component {
                           className="p-1 w-full"
                           type="text"
                           placeholder="Full name"
+                          name="valueName"
+                          onChange={this.handleChange}
                         />
                       </div>
                       <div className="flex gap-3 items-center mt-3">
@@ -175,6 +228,8 @@ export default class BookingDialog extends React.Component {
                           className="p-1 w-full"
                           type="email"
                           placeholder="your@email.com"
+                          name="valueEmail"
+                          onChange={this.handleChange}
                         />
                       </div>
                       <div className="flex gap-3 items-center mt-3">
@@ -191,6 +246,8 @@ export default class BookingDialog extends React.Component {
                           className="p-1 w-full"
                           type="tel"
                           placeholder="+XXX XXX XXXX"
+                          name="valuePhone"
+                          onChange={this.handleChange}
                         />
                       </div>
                     </div>
@@ -200,6 +257,9 @@ export default class BookingDialog extends React.Component {
                         required
                         className="w-8 h-8 md:w-6 md:h-6"
                         type="checkbox"
+                        name="valueAcceptTerms"
+                        checked={this.state.valueAcceptTerms}
+                        onChange={this.handleChange}
                       />
                       <span className="text-md md:text-lg">
                         I accept the{" "}

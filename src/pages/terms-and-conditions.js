@@ -22,8 +22,8 @@ export const TermsAndConditionsPage = () => {
           </div>
         </div>
 
-        {/* Section :: Meet our people */}
-        <div id="about-us" className="flex justify-center">
+        {/* Section :: Terms and Conditions */}
+        <div id="terms-and-conditions" className="flex justify-center">
           <div className="w-full max-w-screen-lg p-6">
             <div className="mt-12">
               <p className="text-xl font-medium">

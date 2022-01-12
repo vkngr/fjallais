@@ -22,8 +22,8 @@ const CancellationPolicyPage = () => {
           </div>
         </div>
 
-        {/* Section :: Meet our people */}
-        <div id="about-us" className="flex justify-center">
+        {/* Section :: Cancellation Policy */}
+        <div id="cancellation-policy" className="flex justify-center">
           <div className="w-full max-w-screen-lg p-6">
             <div className="mt-12">
               <p className="text-xl font-medium">

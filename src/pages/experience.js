@@ -330,6 +330,7 @@ export default class Experience extends React.Component {
 export const query = graphql`
   query Experience($slug: String) {
     contentfulExperience(slug: { eq: $slug }) {
+      contentful_id
       slug
       heading
       types {
