@@ -198,7 +198,7 @@ export default class BookingPage extends React.Component {
                 {bookingStatusMessages.map((e, i) => (
                   <p className="text-xl font-medium mt-6 ">
                     <div className="flex gap-3 items-center">
-                      {this.state.bookingStatus < i ? (
+                      {this.state.bookingStatus < i + 1 ? (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-6 w-6"
